@@ -1,12 +1,19 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #666;
+    background: linear-gradient(270deg, #ff7e5f, #feb47b);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .header {
@@ -24,18 +31,49 @@ h1 {
     color: white;
     font-size: 24px;
     margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: textFadeIn 2s ease-in-out;
+}
+
+@keyframes textFadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 .container {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+    width: 500px;
+    height: 400px; 
+    object-fit: cover; 
     margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); 
+    opacity: 0; 
+    animation: fadeIn 1s ease-in-out forwards, bobbing 5s ease-in-out infinite;
+    animation-delay: 0.5s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bobbing {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7); 
 }
 
 button {
@@ -44,10 +82,21 @@ button {
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 1s; 
 }
 
 button:hover {
     background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
