@@ -8,6 +8,8 @@ body {
     background: linear-gradient(270deg, #ff7e5f, #feb47b);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 @keyframes gradientAnimation {
@@ -20,16 +22,19 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .header .logo {
     height: 50px;
     margin-right: 10px;
+    max-width: 100%;
+    height: auto;
 }
 
 h1 {
     color: white;
-    font-size: 24px;
+    font-size: 4vw;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     animation: textFadeIn 2s ease-in-out;
@@ -46,16 +51,18 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
 }
 
 img {
-    width: 500px;
-    height: 400px; 
-    object-fit: cover; 
+    width: 80vw;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
     margin-bottom: 20px;
     border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); 
-    opacity: 0; 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
     animation: fadeIn 1s ease-in-out forwards, bobbing 5s ease-in-out infinite;
     animation-delay: 0.5s;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -73,12 +80,12 @@ img {
 
 img:hover {
     transform: scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 10px 5vw;
+    font-size: 3.5vw;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -87,7 +94,9 @@ button {
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in-out forwards;
-    animation-delay: 1s; 
+    animation-delay: 1s;
+    max-width: 90vw;
+    box-sizing: border-box;
 }
 
 button:hover {
